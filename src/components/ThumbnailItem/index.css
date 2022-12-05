@@ -1,0 +1,16 @@
+.list-item {
+  list-style: none;
+}
+
+.thumbnailBtn {
+  background: transparent;
+  border: none;
+  padding: 0px;
+  margin-right: 7px;
+}
+
+.thumbnail-img {
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
+}
