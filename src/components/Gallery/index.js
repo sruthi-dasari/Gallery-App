@@ -75,26 +75,35 @@ const imagesList = [
 
 class Gallery extends Component {
   state = {
-    imgUrl: imagesList[0].imageUrl,
-    imgAltTxt: imagesList[0].imageAltText,
+    activeImgId: imagesList[0].id,
   }
 
-  // const changeGalleryImg = () =>{
-
-  // }
+  updateActiveImgId = id => {
+    this.setState({activeImgId: id})
+  }
 
   render() {
-    const {imgUrl, imgAltTxt} = this.state
+    const {activeImgId} = this.state
+    const activeObj = imagesList.find(eachObj => eachObj.id === activeImgId)
+    console.log(activeObj)
+    const {imageUrl, imageAltText} = activeObj
+
     return (
       <div className="app-container">
         <div className="gallery-img-container">
-          <img src={imgUrl} alt={imgAltTxt} className="gallery-img" />
+          <img src={imageUrl} alt={imageAltText} className="gallery-img" />
         </div>
         <h1 className="title">Nature Photography</h1>
         <p className="subtitle">Nature Photography by Rahul</p>
         <ul className="thumbnail-container">
           {imagesList.map(eachImage => (
-            <ThumbnailItem imageContainer={eachImage} key={eachImage.id} />
+            <ThumbnailItem
+              imageContainer={eachImage}
+              key={eachImage.id}
+              isActive={activeImgId === eachImage.id}
+              updateActiveImgId={this.updateActiveImgId}
+              activeImgId={activeImgId}
+            />
           ))}
         </ul>
       </div>

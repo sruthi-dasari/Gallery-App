@@ -7,10 +7,15 @@
   border: none;
   padding: 0px;
   margin-right: 7px;
+  cursor: pointer;
 }
 
 .thumbnail-img {
   height: 30px;
   width: 30px;
   opacity: 0.5;
+}
+
+.active-thumbnail-img {
+  opacity: 1;
 }

@@ -7,18 +7,18 @@
 
 .gallery-img-container {
   padding: 0px;
-  height: 250px;
-  width: 400px;
-  margin-bottom: 10px;
+  height: 500px;
+  width: 650px;
+  margin-bottom: 20px;
 }
 
 .gallery-img {
-  height: 250px;
-  width: 400px;
+  height: 500px;
+  width: 650px;
 }
 
 .title {
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Roboto';
   margin: 0px;
   color: #1e293b;
@@ -28,6 +28,7 @@
   font-size: 14px;
   font-family: 'Roboto';
   color: #64748b;
+  font-weight: bold;
 }
 
 .thumbnail-container {

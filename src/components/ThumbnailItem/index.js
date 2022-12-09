@@ -2,25 +2,27 @@ import './index.css'
 import {Component} from 'react'
 
 class ThumbnailItem extends Component {
-  // const onThumbnailClick = () =>{
-  //     changeGalleryImg()
-  // }
+  onThumbnailClick = () => {
+    const {imageContainer, updateActiveImgId} = this.props
+    const {id} = imageContainer
+    updateActiveImgId(id)
+  }
 
   render() {
-    const {imageContainer} = this.props
-    const {
-      imageUrl,
-      thumbnailUrl,
-      imageAltText,
-      thumbnailAltText,
-    } = imageContainer
+    const {imageContainer, activeImgId, isActive} = this.props
+    const {thumbnailUrl, thumbnailAltText} = imageContainer
+    const activeThumbnailClassName = isActive ? 'active-thumbnail-img' : ''
     return (
       <li className="list-item">
-        <button className="thumbnailBtn" onClick={this.onThumbnailClick}>
+        <button
+          type="button"
+          className="thumbnailBtn"
+          onClick={this.onThumbnailClick}
+        >
           <img
             src={thumbnailUrl}
             alt={thumbnailAltText}
-            className="thumbnail-img"
+            className={`thumbnail-img ${activeThumbnailClassName}`}
           />
         </button>
       </li>
